@@ -24,6 +24,10 @@ class SpringSeleniumApplicationTests {
   @Value("${fruits}")
   private List<String> fruitsList;
 
+  @Autowired private Faker faker;
+
+  @Autowired private Television tv;
+
   @Test
   void contextLoads() {
     System.out.println(this.path);
@@ -32,8 +36,9 @@ class SpringSeleniumApplicationTests {
     System.out.println(this.url);
     this.user.printDetails();
 
-    Faker faker = new Faker();
-    System.out.println(faker.name().firstName());
+    System.out.println("First Name: " + faker.name().firstName());
+
+    this.tv.playMovie();
   }
 
   /*
