@@ -13,9 +13,14 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-selenium</name>
     <description>test spring selenium framework</description>
+
     <properties>
         <java.version>11</java.version>
+        <selenium.version>4.0.0-beta-3</selenium.version>
+        <webdrivermanager.version>4.4.0</webdrivermanager.version>
+        <testng.version>7.3.0</testng.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -35,6 +40,24 @@
             <version>1.0.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
+
+        <!-- testng users only -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -56,6 +79,11 @@
                         </googleJavaFormat>
                     </java>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
             </plugin>
         </plugins>
     </build>
