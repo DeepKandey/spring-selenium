@@ -1,12 +1,11 @@
 package com.spring.springselenium.page.google;
 
 import com.spring.springselenium.page.Base;
+import java.util.List;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class SearchComponent extends Base {
