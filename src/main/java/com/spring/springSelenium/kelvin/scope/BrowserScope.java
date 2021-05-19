@@ -1,4 +1,4 @@
-package com.spring.springSelenium.config;
+package com.spring.springSelenium.kelvin.scope;
 
 import java.util.Objects;
 import org.openqa.selenium.remote.RemoteWebDriver;

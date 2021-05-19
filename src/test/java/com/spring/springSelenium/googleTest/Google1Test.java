@@ -2,8 +2,8 @@ package com.spring.springSelenium.googleTest;
 
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.spring.springSelenium.SpringBaseTestNGTest;
+import com.spring.springSelenium.kelvin.service.ScreenshotService;
 import com.spring.springSelenium.page.google.GooglePage;
-import com.spring.springSelenium.util.ScreenshotUtil;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 public class Google1Test extends SpringBaseTestNGTest {
 
   @Autowired private GooglePage googlePage;
-  @Lazy @Autowired private ScreenshotUtil screenshotUtil;
+  @Lazy @Autowired private ScreenshotService screenshotUtil;
 
   @Test
   public void googleTest() throws IOException, InterruptedException {

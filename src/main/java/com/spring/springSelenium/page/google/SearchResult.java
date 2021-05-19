@@ -1,6 +1,6 @@
 package com.spring.springSelenium.page.google;
 
-import com.spring.springSelenium.annotation.PageFragment;
+import com.spring.springSelenium.kelvin.annotation.PageFragment;
 import com.spring.springSelenium.page.Base;
 import java.util.List;
 import org.openqa.selenium.WebElement;

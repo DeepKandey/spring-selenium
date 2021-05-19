@@ -1,6 +1,7 @@
-package com.spring.springSelenium.config;
+package com.spring.springSelenium.kelvin.config;
 
-import com.spring.springSelenium.annotation.LazyConfiguration;
+import com.spring.springSelenium.kelvin.annotation.LazyConfiguration;
+import com.spring.springSelenium.kelvin.annotation.ThreadScopeBean;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -13,7 +14,7 @@ import org.springframework.context.annotation.*;
 public class WebDriverConfig {
 
   @Primary
-  @Bean
+  @ThreadScopeBean
   @ConditionalOnProperty(name = "browser", havingValue = "firefox")
   public WebDriver firefoxDriver() {
     System.setProperty(
@@ -21,9 +22,8 @@ public class WebDriverConfig {
     return new FirefoxDriver();
   }
 
-  @Bean
+  @ThreadScopeBean
   // @Scope("prototype")
-  @Scope("browserScope")
   @ConditionalOnMissingBean
   public WebDriver chromeDriver() {
     System.setProperty(

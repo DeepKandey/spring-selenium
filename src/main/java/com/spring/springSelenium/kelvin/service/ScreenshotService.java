@@ -1,4 +1,4 @@
-package com.spring.springSelenium.util;
+package com.spring.springSelenium.kelvin.service;
 
 import com.github.javafaker.Faker;
 import java.io.File;
@@ -11,12 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 
 @Lazy
-@Component
-public class ScreenshotUtil {
+@Service
+public class ScreenshotService {
 
   // @Autowired private TakesScreenshot driver;
   @Autowired private ApplicationContext ctx;

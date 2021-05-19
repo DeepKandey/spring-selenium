@@ -1,4 +1,4 @@
-package com.spring.springSelenium.config;
+package com.spring.springSelenium.kelvin.scope;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;

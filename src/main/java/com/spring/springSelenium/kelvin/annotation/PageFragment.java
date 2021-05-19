@@ -1,4 +1,4 @@
-package com.spring.springSelenium.annotation;
+package com.spring.springSelenium.kelvin.annotation;
 
 import java.lang.annotation.*;
 import org.springframework.context.annotation.Lazy;
@@ -11,4 +11,4 @@ import org.springframework.stereotype.Component;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface Page {}
+public @interface PageFragment {}

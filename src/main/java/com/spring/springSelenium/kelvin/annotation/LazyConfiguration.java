@@ -1,4 +1,4 @@
-package com.spring.springSelenium.annotation;
+package com.spring.springSelenium.kelvin.annotation;
 
 import java.lang.annotation.*;
 import org.springframework.context.annotation.Configuration;
