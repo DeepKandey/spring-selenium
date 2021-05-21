@@ -1,6 +1,7 @@
 package com.spring.springSelenium.page.flights;
 
 import com.spring.springSelenium.kelvin.annotation.Page;
+import com.spring.springSelenium.kelvin.annotation.TakeScreenshot;
 import com.spring.springSelenium.page.Base;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,6 +18,7 @@ public class FlightPage extends Base {
     this.driver.get(url);
   }
 
+  @TakeScreenshot
   public List<String> getLabels() {
     return this.elements.stream()
         .map(WebElement::getText)
