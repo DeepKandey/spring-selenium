@@ -1,20 +1,20 @@
 package com.spring.springSelenium.visa;
 
 import com.spring.springSelenium.SpringBaseTestNGTest;
-
 import com.spring.springSelenium.entity.User;
 import com.spring.springSelenium.page.visa.VisaRegistrationPage;
 import com.spring.springSelenium.repository.UserRepository;
+import java.sql.Date;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.sql.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class UserVisaTest extends SpringBaseTestNGTest {
+
+  private static final Logger logger = LoggerFactory.getLogger(UserVisaTest.class);
 
   @Autowired private UserRepository repository;
   @Autowired private VisaRegistrationPage visaRegistrationPage;
@@ -37,7 +37,12 @@ public class UserVisaTest extends SpringBaseTestNGTest {
     this.visaRegistrationPage.setComments(uer.getComments());
     this.visaRegistrationPage.submit();
 
-    System.out.println(this.visaRegistrationPage.getConfirmationNumber());
+    //  System.out.println(this.visaRegistrationPage.getConfirmationNumber());
+
+    logger.info(
+        "Request confirmation # INFO : " + this.visaRegistrationPage.getConfirmationNumber());
+    logger.warn(
+        "Request confirmation # WARN : " + this.visaRegistrationPage.getConfirmationNumber());
   }
 
   @DataProvider
