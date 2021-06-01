@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class EnggSalary {
 
+  private int amount;
+
   public int getAmount() {
     return amount;
   }
@@ -14,6 +16,4 @@ public class EnggSalary {
   public void setAmount(int amount) {
     this.amount = amount;
   }
-
-  private int amount;
 }

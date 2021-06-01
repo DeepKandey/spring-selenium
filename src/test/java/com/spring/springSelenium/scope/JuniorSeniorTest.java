@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 public class JuniorSeniorTest extends SpringBaseTestNGTest {
 
   @Autowired private JuniorEngg juniorEngg;
-
   @Autowired private SeniorEngg seniorEngg;
 
   @Test

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SeniorEngg {
+
   @Autowired private EnggSalary salary;
 
   public EnggSalary getSalary() {
