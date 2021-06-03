@@ -1,7 +1,8 @@
 package com.spring.springSelenium.kelvin.aop;
 
 import com.spring.springSelenium.kelvin.annotation.Window;
-import com.spring.springSelenium.kelvin.service.WindowsSwitchService;
+import com.spring.springSelenium.kelvin.service.WindowSwitchService;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,15 +12,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class WindowAspect {
 
-  @Autowired private WindowsSwitchService windowsSwitchService;
+  @Autowired private WindowSwitchService windowSwitchService;
 
   @Before("@target(window) && within(com.spring.springSelenium..*)")
   public void before(Window window) {
-    this.windowsSwitchService.switchByTitle(window.value());
+    this.windowSwitchService.switchByTitle(window.value());
   }
 
-  @Before("@target(window) && within(com.spring.springSelenium..*)")
+  @After("@target(window) && within(com.spring.springSelenium..*)")
   public void after(Window window) {
-    this.windowsSwitchService.switchByIndex(0);
+    this.windowSwitchService.switchByIndex(0);
   }
 }

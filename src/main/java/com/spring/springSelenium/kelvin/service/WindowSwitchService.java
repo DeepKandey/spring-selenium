@@ -1,19 +1,27 @@
 package com.spring.springSelenium.kelvin.service;
 
+import com.spring.springSelenium.kelvin.config.WebDriverWaitConfig;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
 @Service
-public class WindowsSwitchService {
+public class WindowSwitchService {
 
   @Autowired private ApplicationContext ctx;
+  @Autowired private WebDriverWaitConfig webDriverWaitConfig;
 
   public void switchByTitle(final String title) {
     WebDriver driver = this.ctx.getBean(WebDriver.class);
     driver.getWindowHandles().stream()
-        .map(handle -> driver.switchTo().window(handle).getTitle())
+        .map(
+            handle -> {
+              this.webDriverWaitConfig
+                  .webDriverWait(driver)
+                  .until(d -> driver.switchTo().window(handle).getTitle().length() != 0);
+              return driver.switchTo().window(handle).getTitle();
+            })
         .filter(t -> t.startsWith(title))
         .findFirst()
         .orElseThrow(

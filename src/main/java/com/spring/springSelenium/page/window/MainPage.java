@@ -28,8 +28,4 @@ public class MainPage extends Base {
   public boolean isAt() {
     return this.webDriverWait.until(d -> !this.links.isEmpty());
   }
-
-  public void quitBrowser() {
-    this.driver.quit();
-  }
 }

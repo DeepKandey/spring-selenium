@@ -17,5 +17,6 @@ public class PropsTest extends SpringBaseTestNGTest {
     Properties properties =
         PropertiesLoaderUtils.loadProperties(loader.getResource("my.properties"));
     System.out.println(properties);
+    System.out.println("Password:" + properties.get("password"));
   }
 }

@@ -1,7 +1,7 @@
 package com.spring.springSelenium.window;
 
 import com.spring.springSelenium.SpringBaseTestNGTest;
-import com.spring.springSelenium.kelvin.service.WindowsSwitchService;
+import com.spring.springSelenium.kelvin.service.WindowSwitchService;
 import com.spring.springSelenium.page.window.MainPage;
 import com.spring.springSelenium.page.window.PageA;
 import com.spring.springSelenium.page.window.PageB;
@@ -12,14 +12,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-@TestPropertySource(properties = "browser=chrome")
+@TestPropertySource(properties = "browser=firefox")
 public class WindowSwitchTest extends SpringBaseTestNGTest {
 
   @Autowired private MainPage mainPage;
   @Autowired private PageA pageA;
   @Autowired private PageB pageB;
   @Autowired private PageC pageC;
-  @Autowired private WindowsSwitchService windowsSwitchService;
+  @Autowired private WindowSwitchService windowSwitchService;
 
   @BeforeClass
   public void setUp() {

@@ -1,6 +1,7 @@
 package com.spring.springSelenium.resource;
 
 import com.spring.springSelenium.SpringBaseTestNGTest;
+import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -42,7 +43,8 @@ public class ResourceTest extends SpringBaseTestNGTest {
     System.out.println("---------");
     Files.readAllLines(resource1.getFile().toPath()).forEach(System.out::println);
     System.out.println("---------");
-    System.out.println(new String(resource2.getInputStream().readAllBytes()));
+    System.out.println(
+        new String(new BufferedInputStream(resource2.getInputStream()).readAllBytes()));
     System.out.println("---------");
     System.out.println(new String(resource3.getInputStream().readAllBytes()));
 
